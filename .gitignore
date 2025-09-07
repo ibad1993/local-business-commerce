@@ -132,4 +132,5 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+.cursorrules
 node_modules
