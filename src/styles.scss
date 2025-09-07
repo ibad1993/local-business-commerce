@@ -1,0 +1,71 @@
+/* Global Styles for Harry's Coffee Stop */
+@use '@angular/material' as mat;
+
+// Custom color palette for coffee shop theme
+$coffee-primary: mat.define-palette(mat.$brown-palette, 600);
+$coffee-accent: mat.define-palette(mat.$orange-palette, A200);
+$coffee-warn: mat.define-palette(mat.$red-palette);
+
+// Include the common styles for Angular Material
+@include mat.core();
+
+// Define the theme
+$coffee-theme: mat.define-light-theme((
+  color: (
+    primary: $coffee-primary,
+    accent: $coffee-accent,
+    warn: $coffee-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+// Apply the theme
+@include mat.all-component-themes($coffee-theme);
+
+// Global styles
+html, body { 
+  height: 100%; 
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
+}
+
+// Coffee shop specific styles
+.coffee-bg {
+  background: linear-gradient(135deg, #8d6e63 0%, #a1887f 100%);
+}
+
+.coffee-text {
+  color: #5d4037;
+}
+
+.coffee-accent {
+  color: #ff9800;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8d6e63;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d4c41;
+}
+
+// Utility classes
+.text-center { text-align: center; }
+.mt-2 { margin-top: 16px; }
+.mb-2 { margin-bottom: 16px; }
+.p-2 { padding: 16px; }
+
+
